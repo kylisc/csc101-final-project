@@ -6,7 +6,7 @@ class TestStudent(unittest.TestCase):
     def test_wellness_score(self):
         s = Student("Alice F", 7, 4, 3)
         score, label = s.wellness_score()
-        self.assertEqual(label, "Moderate")  # correct label
+        self.assertEqual(label, "Moderate")
         self.assertIsInstance(score, float)
 
 class TestCommunity(unittest.TestCase):
