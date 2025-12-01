@@ -4,7 +4,7 @@ from classes import Student, Community
 
 def find_student_by_name(students, name):
     for s in students:
-        if s.name == name:
+        if s.name == name:  # must match exactly
             return s
     return None
 
@@ -40,6 +40,7 @@ def main(argv):
     data_path = argv[1]
 
     students = load_students(data_path)
+    print("Loaded students:", [s.name for s in students])
     if not students:
         print('No students found.')
         return 1

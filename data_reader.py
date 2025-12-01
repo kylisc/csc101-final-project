@@ -2,7 +2,7 @@ from classes import Student, Community
 
 def read_student_line(line, line_num):
     raw = line.strip()
-    if raw =='':
+    if raw == '':
         return None
     if raw[0] == '#':
         return None
@@ -26,7 +26,7 @@ def read_student_line(line, line_num):
         print("  Error", raw)
         return None
 
-    if not (0 <= sleep <= 24 and 0 <= study <= 24 and 0 <= stress <= 24 and 1 <= stress <= 10):
+    if not (0 <= sleep <= 24 and 0 <= study <= 24 and 1 <= stress <= 10):
         print("  Error", raw)
         return None
 
@@ -42,12 +42,11 @@ def load_students(path):
         return students
 
     line_num = 1
-
     for line in file:
         s = read_student_line(line, line_num)
         if s is not None:
             students.append(s)
-        line_num = line_num + 1
+        line_num += 1
 
     file.close()
     return students
